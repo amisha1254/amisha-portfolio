@@ -1,129 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .content-school {
-            position: absolute;
-            z-index: 10;
-            bottom: 0;
-            transform: translateY(50%);
-            background-color: rgba(230, 220, 220, 0.705);
-            transition: 0.3s;
-            display: none;
-        
-            
-        
-        }
-         .school:hover .content-school {
-            transform: translateY(0%);
-            top: 50px;
-            position:absolute;
-            height: 200px;
-            border-left: 30px;
-            display: block;
-            margin-left: 50px;
-        }
-        .school img{
-            height: 300px;
-            width: 450px;
-            border-radius: 6px;
-            margin-left: 50px;
-        }
-        body{
-            background-color: rgb(65, 24, 71);
-        }
-        .inter img{
-            height: 300px;
-            width: 250px;
-            position: absolute;
-            margin-left: 550px;
-            border-radius: 6px;
-        }
-        .inter-content {
-            position: absolute;
-            z-index: 10;
-            bottom: 0;
-            transform: translateY(50%);
-            background-color: rgba(230, 220, 220, 0.705);
-            transition: 0.3s;
-            display: none;
-         
-        }
-        .inter:hover .inter-content {
-            transform: translateY(0%);
-            top: 50px;
-            position: absolute;
-            height: 200px;
-            margin-left: 550px;
-            margin-top: 300px;
-            display: block;
+        body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        }
-        .Btech img{
-            margin-left: 850px;
-            height: 300px;
-            width: 500px;
-            border-radius: 6px;
-            margin-top: 300px;
-        }
-        .Btech-content{
-            position: absolute;
-            z-index: 10;
-            bottom: 0;
-            transform: translateY(50%);
-            background-color: rgba(230, 220, 220, 0.705);
-            transition: 0.3s;
-            display: none;
-            
-        }
-        .Btech:hover .Btech-content{
-            transform: translateY(0%);
-            top: 50px;
-            position: absolute;
-            height: 200px;
-            margin-left: 850px;
-            margin-top: 600px;
-            display: block;
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+}
 
-        }
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 20px;
+    border-radius: 20px;
+}
 
-        
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: 000;
+    color: #fff;
+}
+
+.card-back {
+    background-color: rgb(65, 36, 123);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+
     </style>
+    <title>Education Cards</title>
 </head>
 <body>
-    <div class="school"><img src="school.png">
-        <div class="content-school">
-            <ul>
-                <li>SPR SCHOOL OF EXECLLENCE</li>
-                <li>GPA : 8.0</li>
-                <li>KAMAREDDY</li>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="school.png" alt="" style="width: 250px; height: 350px;">
+                    <h2>SPR HIGH SCHOOL</h2>
+                    <p>KAMAREDDY</p>
+                </div>
+                <div class="card-back">
+                    <p>SCORED 80% (SSC)</p>
+                </div>
+            </div>
         </div>
-        
-        
-    
-    <div class="inter"><img src="inter.avif">
-        <div class="inter-content">
-            <ul>
-                <li>Abhyaas junior college</li>
-                <li>perecntage : 76%</li>
-                <li>Hyberabad</li>
-
-            </ul>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="inter.avif" alt="" style="width: 250px; height: 350px;">
+                    <h2>ABHYAAS JUNIOR COLLEGE</h2>
+                    <p>HYDERABAD</p>
+                </div>
+                <div class="card-back">
+                    <p>SCORED 76%(MPC)</p>
+                </div>
+            </div>
         </div>
-        </div>
-    <div class="Btech"><img src="college.jpeg">
-        <div class="Btech-content">
-            <ul>
-                <li>Kakatiya institute of technology and science for women</li>
-                <li>perecntage : 70%</li>
-                <li>Nizamabad</li>
-
-            </ul>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="college.jpeg" alt="" style="width: 250px; height: 350px;">
+                    <h2>KAKATIYA INSTITUTE OF TECHNOLOGY AND SCIENCE</h2>
+                    <p>NIZAMABAD</p>
+                </div>
+                <div class="card-back">
+                    <p>GRADUATE WITH 70%(ECE) </p>
+                </div>
+            </div>
         </div>
     </div>
-   
-    
 </body>
 </html>
